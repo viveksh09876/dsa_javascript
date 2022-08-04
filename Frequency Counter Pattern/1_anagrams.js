@@ -46,9 +46,11 @@ function anagram2(str1, str2) {
     }
     //loop over string 2 and check if key is present in hashmap
     for (let val in str2) {
-        if (!strMap1[str2[val]]) {
+        if (!strMap1[str2[val]] || strMap1[str2[val]] === 0) {
             return false
-        }
+        } else(
+            strMap1[str2[val]] -= 1
+        )
     }
     return true
 }
